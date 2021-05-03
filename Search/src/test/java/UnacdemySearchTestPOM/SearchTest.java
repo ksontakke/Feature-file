@@ -8,10 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import UnacademySearchPOM.SearchPOM;
+import io.cucumber.java.Before;
 
 public class SearchTest 
 {
 	WebDriver driver;
+	@Before
+	public void setup()
+	{
+		
+	}
 	@Test
 	public void searchTest() throws InterruptedException
 	{
@@ -21,13 +27,12 @@ public class SearchTest
 	driver.manage().window().maximize();
 	
 	SearchPOM sp = PageFactory.initElements(driver, SearchPOM.class);
-//	sp.accountlick();
-//	sp.profileClick();
+
 	sp.searchBox();
 	sp.name("sahil khandelwal");
 	Actions act = new Actions(driver);
-	act.sendKeys(Keys.ENTER).perform();	
-//	sp.trend();
+	act.sendKeys(Keys.ENTER).build().perform();	
+
 
 	sp.seeMore();
 	sp.freeClass();
@@ -43,8 +48,7 @@ public class SearchTest
 	sp.courseSyllabus();
 	sp.testPractice();
 	sp.testSeries();
-	sp.clickIcon();
-	sp.signOut();
+	sp.homePage();
 	driver.close();	
 	}
 }

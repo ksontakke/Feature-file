@@ -11,53 +11,60 @@ public class SearchPOM
 {
 	WebDriver driver;
 	
-	//@FindBy(xpath="//img[@src='https://static.uacdn.net/thumbnail/user/default.png']")
-	//WebElement account;
-	//@FindBy(xpath="//p[contains(text(),'Profile')]")
-	//WebElement profile;
 	@FindBy(id="searchInput")
 	WebElement search;
-//	@FindBy(xpath="//p[contains(text(),'sahil khandelwal')]")
-//	WebElement trending;
-//	@FindBy(xpath="//div[@class='Carousel__CardContainer-sc-1owlrrs-4 cIqTFa']//div[1]//a[1]//div[2]//div[2]//button[1]")
-//	WebElement follow;
 	
-	@FindBy(xpath="//a[contains(text(),'SEE ALL')]")
+	@FindBy(xpath="//body/div[@id='__next']/div[@class='Container-s1akv7-0 layout__Container-yt2anf-0 gNwuIq fyQkRo']/div[@class='AppContainer-sc-1tymj1p-0 layout__AppContainer-yt2anf-2 jbWmsw dtbtfa']/div[@class='Content-v4b5dl-0 layout__Content-yt2anf-3 kOTUQT kouZiE']/div[1]/a[1]/p[1]")
 	WebElement seeall;
-	@FindBy(linkText="Free classes & tests")
+	
+	@FindBy(xpath="//a[1]//div[2]//div[2]//button[1]")
+	WebElement follow;
+	
+	@FindBy(partialLinkText = "Free classes & tes")
 	WebElement freeoptions;
-	@FindBy(partialLinkText="Quick cours")
+	
+	@FindBy(linkText="Quick courses")
 	WebElement quickcourse;
+	
 	@FindBy(xpath="//li[@data-id='library']")
 	WebElement library;
+	
 	@FindBy(xpath="//span[contains(text(),'Report an issue')]")
 	WebElement issue;
+	
 	@FindBy(xpath="//textarea[@placeholder='Type in your query']")
 	WebElement textissue;
+	
 	@FindBy(className="Button__StyledButton-dg3jck-0 jerpTs")
 	WebElement sendissue;
+	
 	@FindBy(className="PlusNavBar__Item-sc-1chblf9-8 hQAPWM")
 	WebElement getapp;
+	
 	@FindBy(xpath="//img[@alt='appStore']")
 	WebElement appstore;
+	
 	@FindBy(className="LearnOnTheGo__Img-dlb5bo-6 QyqaT")
 	WebElement googleplay;
+	
 	@FindBy(xpath="//span[contains(text(),'Other links')]")
 	WebElement otherlinks;
+	
 	@FindBy(xpath="//a[@href='https://www.facebook.com/unacademy/']")
 	WebElement facebook;
-	@FindBy(xpath="//a[contains(text(),'Home')]")
-	WebElement homepage;
+	
+	
 	@FindBy(linkText="Syllabus")
 	WebElement syllabus;
+	
 	@FindBy(xpath="//span[contains(text(),'Test series & Practice')]")
 	WebElement testpractice;
+	
 	@FindBy(linkText="Test series")
 	WebElement testseries;
-	@FindBy(className="Avatar__StyledAvatar-sc-1pabonf-0 hfGBuT HeaderUser__UserAvatar-zjqo1z-8 eyuwbo")
-	WebElement icon;
-	@FindBy(className="CustomMenuItem__StyledItem-a6uuee-0 GjjfX")
-	WebElement signout;
+	
+	@FindBy(xpath="//a[contains(text(),'Home')]")
+	WebElement homepage;
 	
 	public void search(WebDriver driver)
 	{
@@ -65,30 +72,21 @@ public class SearchPOM
 		PageFactory.initElements(driver, this);
 	}
 	
-//	public void accountlick()
-//	{
-//		account.click();
-//	}
-//	public void profileClick()
-//	{
-//		profile.click();
-//	}
 	public void searchBox()
 	{
 		search.click();
 	}
+	
 	public void name(String name)
 	{
 		search.sendKeys(name);
 	}
-//	public void trend()
-//	{
-//		trending.click();
-//	}
-//	public void follow()
-//	{
-//		follow.click();
-//	}
+
+	public void follow()
+	{
+		follow.click();
+	}
+	
 	public void seeMore()
 	{
 		seeall.click();
@@ -151,12 +149,9 @@ public class SearchPOM
 	{
 		testseries.click();
 	}
-	public void clickIcon()
+	
+	public void homePage()
 	{
-		icon.click();
+		homepage.click();
 	}
-	public void signOut()
-	{
-		signout.click();
-	}	
 }
